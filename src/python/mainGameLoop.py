@@ -21,8 +21,10 @@ def main():
                                          # will be used as background 
     bg.fill( pygame.Color(gWindowsBgColor) )      # Fill the surface of a solid color
     hero = Player(55,55)
-    left = right = False
+    left = right = up = False
+    timer = pygame.time.Clock()
     while  1: # The main program loop
+        timer.tick(60)
         for e in pygame.event.get (): # handle the event 
             if e.type == QUIT:
                  raise SystemExit, "QUIT"
@@ -34,6 +36,10 @@ def main():
                 right = False 
             if e.type == KEYUP and e.key == K_LEFT:
                 left = False
+            if e.type == KEYDOWN and e.key == K_UP:
+                up = True
+            if e.type == KEYUP and e.key == K_UP:
+                up = False
         screen.blit(bg,(0, 0))       # each iteration All you need to redraw 
         level = ["-------------------------",
                 "-                        -",
@@ -65,9 +71,9 @@ def main():
                 x = gPlatformWidth + x
             y = gPlatformHeight + y
             x = 0
-        hero.update (left, right) # movement 
+        hero.update(left, right, up) 
         hero.draw (screen) # display
         pygame.display.update ()      # update and withdrawal of all changes to the screen
 
 if __name__ == "__main__":
-    main ()
+    main()
