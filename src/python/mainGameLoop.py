@@ -1,32 +1,36 @@
 #!/usr/bin/env python 
-
-# Import the library pygame 
+# Instructions from: 
+# http://habrahabr.ru/post/193888/
+# 
+# File:mainGameLoop.py
+# DateCreated:2015/10/11/  
+#
 import pygame
 from pygame import *
 from player import *
 from blocks import *
-# Declare variables 
-gWindowsWidth = 800  # The width of the window being created 
-gWindowsHeight = 640  # Height 
-gWindowsDisplay = (gWindowsWidth,gWindowsHeight) # Group the width and height of a single variable 
+# 
+gWindowsWidth = 800  
+gWindowsHeight = 640  
+gWindowsDisplay = (gWindowsWidth,gWindowsHeight) 
 gWindowsBgColor = "#444400"
 gPlatformWidth= 32 
 gPlatformHeight = 32
 gPlatformDisplay = (gPlatformWidth,gPlatformHeight)
 gPlatformColor = "#FF6262"
 def main(): 
-    pygame.init () # Initiation PyGame, mandatory line 
-    screen = pygame.display.set_mode(gWindowsDisplay) # Create the window 
-    pygame.display.set_caption ("CSCI3308 Project Demo") # write in caption
-    bg = pygame.Surface(gWindowsDisplay) # Create the visible surface of the 
-                                         # will be used as background 
-    bg.fill( pygame.Color(gWindowsBgColor) )      # Fill the surface of a solid color
+    pygame.init ()
+    screen = pygame.display.set_mode(gWindowsDisplay) 
+    pygame.display.set_caption ("CSCI3308 Project Demo") 
+    bg = pygame.Surface(gWindowsDisplay)
+                                         
+    bg.fill( pygame.Color(gWindowsBgColor) )      
     left = right = up = False
     timer = pygame.time.Clock()
     
-    while  1: # The main program loop
+    while  1:
         timer.tick(100)
-        for e in pygame.event.get (): # handle the event 
+        for e in pygame.event.get ():
             if e.type == QUIT:
                  raise SystemExit, "QUIT"
             if e.type == KEYDOWN and e.key == K_LEFT:
@@ -41,29 +45,10 @@ def main():
                 up = True
             if e.type == KEYUP and e.key == K_UP:
                 up = False
-        screen.blit(bg,(0, 0))       # each iteration All you need to redraw 
-        level = ["-------------------------",
-                "-                       -",
-                "-                       -",
-                "-                       -",
-                "-                       -",
-                "-                       -",
-                "-                       -",
-                "-                       -",
-                "-                       -",
-                "-                       -",
-                "-                       -",
-                "-                ---    -",
-                "-           --          -",
-                "-              ----     -",
-                "-  ---                  -",
-                "-                       -",
-                "-                   --  -",
-                "-              --       -",
-                "-      ---              -",
-                "-------------------------"]    
-        x = y = 0  # coordinates 
-        for row in level: # entire r
+        screen.blit(bg,(0, 0))       
+   
+        x = y = 0
+        for row in level:
             for col in row:
                 if col == "-":
                     pf = Platform(x,y)
@@ -74,27 +59,27 @@ def main():
             x = 0
         hero.update(left, right, up, platforms) 
         entities.draw(screen)
-        pygame.display.update ()      # update and withdrawal of all changes to the screen
+        pygame.display.update ()      
 
 level = ["-------------------------",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
-        "-                        -",
+        "-                       -",
+        "-                       -",
+        "-                       -",
+        "-                       -",
+        "-                       -",
+        "-                       -",
+        "-                       -",
+        "-                       -",
+        "-                       -",
+        "-                       -",
+        "-                ---    -",
+        "-           --          -",
+        "-              ----     -",
+        "-  ---                  -",
+        "-                       -",
+        "-                   --  -",
+        "-              --       -",
+        "-      ---              -",
         "-------------------------"]  
 entities = pygame.sprite.Group()
 hero = Player(55,55)

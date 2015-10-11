@@ -1,5 +1,10 @@
 #!/usr/bin/env python
-
+# Instructions from: 
+# http://habrahabr.ru/post/193888/
+# 
+# File:player.py
+# DateCreated:2015/10/11/  
+#
 from pygame import *
 gPlayer = 0
 gPlayerMoveSpeed = 7
