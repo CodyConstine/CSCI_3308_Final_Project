@@ -87,3 +87,4 @@ platforms = []
 entities.add(hero)
 if __name__ == "__main__":
     main()
+
