@@ -27,7 +27,16 @@ def main():
     bg.fill( pygame.Color(gWindowsBgColor) )      
     left = right = up = False
     timer = pygame.time.Clock()
-    
+    x = y = 0
+    for row in level:
+        for col in row:
+            if col == "-":
+                pf = Platform(x,y)
+                entities.add(pf)
+                platforms.append(pf)    
+            x = gPlatformWidth + x
+        y = gPlatformHeight + y
+        x = 0 
     while  1:
         timer.tick(100)
         for e in pygame.event.get ():
@@ -46,17 +55,6 @@ def main():
             if e.type == KEYUP and e.key == K_UP:
                 up = False
         screen.blit(bg,(0, 0))       
-   
-        x = y = 0
-        for row in level:
-            for col in row:
-                if col == "-":
-                    pf = Platform(x,y)
-                    entities.add(pf)
-                    platforms.append(pf)    
-                x = gPlatformWidth + x
-            y = gPlatformHeight + y
-            x = 0
         hero.update(left, right, up, platforms) 
         entities.draw(screen)
         pygame.display.update ()      
