@@ -11,7 +11,7 @@ from player import *
 from blocks import *
 # 
 gWindowsWidth = 800  
-gWindowsHeight = 640  
+gWindowsHeight = 320  
 gWindowsDisplay = (gWindowsWidth,gWindowsHeight) 
 gWindowsBgColor = "#000000"
 gPlatformWidth= 32 
@@ -54,13 +54,19 @@ def main():
             if col == "-":
                 pf = Platform(x,y)
                 entities.add(pf)
-                platforms.append(pf)    
+                platforms.append(pf)
+            if col == "*":
+                bd = BlockDie(x,y)
+                entities.add(bd)
+                platforms.append(bd)
             x = gPlatformWidth + x
         y = gPlatformHeight + y
         x = 0 
     while  1:
         timer.tick(100)
         for e in pygame.event.get ():
+            if e.type == KEYDOWN and e.key == K_q:
+                 raise SystemExit, "QUIT"
             if e.type == QUIT:
                  raise SystemExit, "QUIT"
             if e.type == KEYDOWN and e.key == K_LEFT:
@@ -84,33 +90,16 @@ def main():
 
 level = ["----------------------------------",
         "-                       ----------",
-        "-                       ----------",
-        "-                       ----------",
-        "-                       ----------",
-        "-                       ----------",
-        "-                       -         ",
         "-                                -",
+        "-            *                   -",
         "-                                -",
-        "-                                -",
-        "-                                -",
-        "-                ---             -",
-        "-           --                   -",
-        "-              ----              -",
-        "-  ---                           -",
-        "-                                -",
-        "-                   --           -",
-        "-              --                -",
-        "-      ---                  ----- ",
-        "-  --  -                         -",
-        "-  -                             -",
-        "-  --                            -",
-        "-    -                           -",
-        "-  --                           -",
-        "-  --  ----                      -",
-        "-                              -- ",
-        "-------------------------         "]  
+        "-        -      -               -",
+        "-               -                -",
+        "-      ----  *  -                -",
+        "-               -              - -",
+        "----------------------------------"]  
 entities = pygame.sprite.Group()
-hero = Player(55,55)
+hero = Player(100,100)
 platforms = []
 entities.add(hero)
 if __name__ == "__main__":

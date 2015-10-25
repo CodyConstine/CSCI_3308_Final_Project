@@ -7,6 +7,7 @@
 #
 from pygame import *
 import pyganim
+import blocks
 import os 
 gPlayer = 0
 gPlayerMoveSpeed = 7
@@ -102,19 +103,28 @@ class Player(sprite.Sprite):
         self.collide(self.xvel,0,platforms)
     def  collide (self, xvel, yvel, platforms): 
         for p in platforms:
-             if sprite.collide_rect (self, p): 
+             if sprite.collide_rect(self, p): 
+                if isinstance(p, blocks.BlockDie):
+                    self.die()
+                else:
+                    if xvel> 0:                     
+                        self.rect.right = p.rect.left
 
-                if xvel> 0:                     
-                    self.rect.right = p.rect.left
+                    if xvel <0:                      
+                        self.rect.left = p.rect.right  
 
-                if xvel <0:                      
-                    self.rect.left = p.rect.right  
+                    if yvel> 0:                     
+                        self.rect.bottom = p.rect.top
+                        self.onGround = True
+                        self.yvel = 0
 
-                if yvel> 0:                     
-                    self.rect.bottom = p.rect.top
-                    self.onGround = True
-                    self.yvel = 0
-
-                if yvel <0:                      
-                    self.rect.top = p.rect.bottom
-                    self.yvel = 0 
+                    if yvel <0:                      
+                        self.rect.top = p.rect.bottom
+                        self.yvel = 0 
+    def teleporting(self, goX, goY):
+        self.rect.x = goX
+        self.rect.y = goY
+        
+    def die(self):
+        time.wait(500)
+        self.teleporting(self.startX, self.startY) 

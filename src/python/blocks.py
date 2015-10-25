@@ -21,4 +21,7 @@ class Platform(sprite.Sprite):
         self.image = image.load("%s/blocks/platform.png" % gIconDir)
         self.image.set_colorkey(Color(gPlatformColor))
         self.rect = Rect(x,y,gPlatformWidth,gPlatformHeight)
-        
+class BlockDie(Platform):
+    def __init__(self, x, y):
+        Platform.__init__(self,x,y)
+        self.image= image.load("%s/blocks/dieBlock.png"%gIconDir)
