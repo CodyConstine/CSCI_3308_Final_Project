@@ -6,6 +6,7 @@
 # DateCreated:2015/10/11/  
 #
 import pygame
+import math
 from pygame import *
 from player import *
 from blocks import *
@@ -41,7 +42,6 @@ def main():
     screen = pygame.display.set_mode(gWindowsDisplay) 
     pygame.display.set_caption ("CSCI3308 Project Demo") 
     bg = pygame.Surface(gWindowsDisplay)
-                                         
     bg.fill( pygame.Color(gWindowsBgColor) )      
     left = right = up = False
     timer = pygame.time.Clock()
@@ -61,9 +61,19 @@ def main():
                 platforms.append(bd)
             x = gPlatformWidth + x
         y = gPlatformHeight + y
-        x = 0 
+        x = 0
+
+        
+        timer.tick(60)
+        #timer
+        message = "test message"
+        pygame.font.init()
+        Font = pygame.font.Font("font.ttf",32)
+        timerText = Font.render("Time: "+message, 2,[255,0, 0])
+        boxSize = timerText.get_rect() 
+        scoreXpos = (gWindowsWidth-boxSize[2])/2
     while  1:
-        timer.tick(100)
+
         for e in pygame.event.get ():
             if e.type == KEYDOWN and e.key == K_q:
                  raise SystemExit, "QUIT"
@@ -81,14 +91,18 @@ def main():
                 up = True
             if e.type == KEYUP and e.key == K_UP:
                 up = False
+        #
+        #
         screen.blit(bg,(0, 0))       
         hero.update(left, right, up, platforms) 
         for e in entities:
             screen.blit (e.image, camera.apply (e))
+        screen.blit(timerText, (0,0))
         camera.update(hero)
         pygame.display.update ()      
 
-level = ["----------------------------------",
+level = ["                                   ",
+        "----------------------------------",
         "-                       ----------",
         "-                                -",
         "-            *                   -",
@@ -96,7 +110,6 @@ level = ["----------------------------------",
         "-        -      -               -",
         "-               -                -",
         "-      ----  *  -                -",
-        "-               -              - -",
         "----------------------------------"]  
 entities = pygame.sprite.Group()
 hero = Player(100,100)
