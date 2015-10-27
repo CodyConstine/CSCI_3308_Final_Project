@@ -38,11 +38,13 @@ ANIMATION_STAY = [('%s/mario/0.png'% ICON_DIR, 0.1)]
 class Player(sprite.Sprite):
     def __init__(self,x,y):
         sprite.Sprite.__init__(self)
+        self.win = False 
         self.xvel = 0
         self.yvel = 0
         self.onGround = False
         self.startX = x
         self.startY = y
+        self.deathCounter = 0
         self.image = Surface((gPlayerDisplay))
         self.image.fill(Color(gPlayerColor))
         self.rect = Rect(x, y, gPlayerWidth, gPlayerHeight)
@@ -106,6 +108,8 @@ class Player(sprite.Sprite):
              if sprite.collide_rect(self, p): 
                 if isinstance(p, blocks.BlockDie):
                     self.die()
+                elif isinstance(p, blocks.Princess):
+                    self.win = True
                 else:
                     if xvel> 0:                     
                         self.rect.right = p.rect.left
@@ -127,4 +131,5 @@ class Player(sprite.Sprite):
         
     def die(self):
         time.wait(500)
+        self.deathCounter = self.deathCounter + 1
         self.teleporting(self.startX, self.startY) 

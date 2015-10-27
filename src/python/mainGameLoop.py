@@ -59,6 +59,11 @@ def main():
                 bd = BlockDie(x,y)
                 entities.add(bd)
                 platforms.append(bd)
+            if col == "P":
+                pr = Princess (x, y)
+                entities.add (pr)
+                platforms.append (pr)
+                animatedEntities.add (pr)
             x = gPlatformWidth + x
         y = gPlatformHeight + y
         x = 0
@@ -66,14 +71,15 @@ def main():
         
         timer.tick(60)
         #timer
-        message = "test message"
+        message = 0
         pygame.font.init()
         Font = pygame.font.Font("font.ttf",32)
-        timerText = Font.render("Time: "+message, 2,[255,0, 0])
+        frameCounter = 0
+    while not hero.win:
+        timerText = Font.render("Final project for CSCI3308.      Time:0"+ str(message)+"   Death:0"+str(hero.deathCounter
+            ), 2,[200,50, 0])
         boxSize = timerText.get_rect() 
         scoreXpos = (gWindowsWidth-boxSize[2])/2
-    while  1:
-
         for e in pygame.event.get ():
             if e.type == KEYDOWN and e.key == K_q:
                  raise SystemExit, "QUIT"
@@ -91,6 +97,10 @@ def main():
                 up = True
             if e.type == KEYUP and e.key == K_UP:
                 up = False
+            if e.type == KEYDOWN and e.key == K_r:
+                frameCounter = 0
+                hero.deathCounter = 0
+                hero.teleporting(100,100)
         #
         #
         screen.blit(bg,(0, 0))       
@@ -99,22 +109,24 @@ def main():
             screen.blit (e.image, camera.apply (e))
         screen.blit(timerText, (0,0))
         camera.update(hero)
-        pygame.display.update ()      
-
+        pygame.display.update ()
+        message = frameCounter// 60
+        frameCounter = frameCounter + 1;
 level = ["                                   ",
         "----------------------------------",
         "-                       ----------",
         "-                                -",
         "-            *                   -",
         "-                                -",
-        "-        -      -               -",
+        "-        -      -                -",
         "-               -                -",
-        "-      ----  *  -                -",
+        "-      ----  *  -               P-",
         "----------------------------------"]  
 entities = pygame.sprite.Group()
 hero = Player(100,100)
 platforms = []
 entities.add(hero)
+animatedEntities = pygame.sprite.Group()
 if __name__ == "__main__":
     main()
 

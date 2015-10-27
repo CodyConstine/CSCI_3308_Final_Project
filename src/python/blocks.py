@@ -6,14 +6,14 @@
 # DateCreated:2015/10/11/  
 #
 
-from pygame import *
+from pygame import * 
+import pyganim
 import os
 gIconDir = os.path.dirname(__file__)
 gPlatformWidth = 32
 gPlatformHeight = 32
 gPlatformDisplay = (gPlatformWidth,gPlatformHeight)
 gPlatformColor = "#FF6262"
-
 class Platform(sprite.Sprite):
     def __init__(self,x,y):
         sprite.Sprite.__init__(self)
@@ -25,3 +25,10 @@ class BlockDie(Platform):
     def __init__(self, x, y):
         Platform.__init__(self,x,y)
         self.image= image.load("%s/blocks/dieBlock.png"%gIconDir)
+
+class Princess(Platform):
+    def __init__(self, x, y):
+        Platform.__init__(self, x,y)
+        self.image = Surface(gPlatformDisplay)
+        self.image = image.load("%s/blocks/princess_l.png"%gIconDir)
+        
