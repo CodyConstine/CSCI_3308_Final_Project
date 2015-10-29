@@ -103,6 +103,8 @@ def main():
                 hero.teleporting(100,100)
         #
         #
+        if(hero.rect.y>400):
+            hero.die()
         screen.blit(bg,(0, 0))       
         hero.update(left, right, up, platforms) 
         for e in entities:
@@ -121,7 +123,7 @@ level = ["                                   ",
         "-        -      -                -",
         "-               -                -",
         "-      ----  *  -               P-",
-        "----------------------------------"]  
+        "----------- ----------------------"]  
 entities = pygame.sprite.Group()
 hero = Player(100,100)
 platforms = []
