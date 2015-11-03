@@ -5,6 +5,7 @@
 # File:mainGameLoop.py
 # DateCreated:2015/10/11/  
 #
+import MySQLdb
 import pygame
 import math
 from pygame import *
@@ -20,6 +21,16 @@ gPlatformHeight = 32
 gPlatformDisplay = (gPlatformWidth,gPlatformHeight)
 gPlatformColor = "#FF6262"
 
+def sendScores(playerID, score):
+    conn = MySQLdb.connect(host= "45.55.26.125:3306", user="Game_User", passwd="",db="Game_Data")
+    x = conn.cursor()
+    add_score = ("INSERT INTO scores"
+                "(scores, userName)"
+                "VALUES (%s, %s)")
+    data_score(score,playerID)
+    x.execute(add_score, data_score)
+    x.close()
+    conn.close()
 class Camera(object):
     def __init__(self, camera_func, width, height):
         self.camera_func = camera_func
