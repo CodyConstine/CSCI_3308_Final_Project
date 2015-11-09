@@ -22,6 +22,8 @@ gPlatformDisplay = (gPlatformWidth,gPlatformHeight)
 gPlatformColor = "#FF6262"
 
 def sendScores(playerID, score):
+    #This function was sending scores to a SQL server
+    #Written by Cody updated on 11/9/15
     conn = MySQLdb.connect(host= "45.55.26.125:3306", user="Game_User", passwd="",db="Game_Data")
     x = conn.cursor()
     add_score = ("INSERT INTO scores"
