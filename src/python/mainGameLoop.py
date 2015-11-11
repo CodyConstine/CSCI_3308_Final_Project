@@ -11,6 +11,7 @@ import math
 from pygame import *
 from player import *
 from blocks import *
+from monsters import *
 # 
 gWindowsWidth = 800  
 gWindowsHeight = 320  
@@ -88,6 +89,11 @@ def main():
         pygame.font.init()
         Font = pygame.font.Font("font.ttf",32)
         frameCounter = 0
+        mn = Monster (190, 200, 2, 3, 150, 15)
+        entities.add(mn)
+        platforms.append(mn)
+        monsters.add(mn)
+
     while not hero.win:
         timerText = Font.render("Final project for CSCI3308.      Time:0"+ str(message)+"   Death:0"+str(hero.deathCounter
             ), 2,[200,50, 0])
@@ -116,6 +122,7 @@ def main():
                 hero.teleporting(100,100)
         #
         #
+        monsters.update(platforms)
         if(hero.rect.y>400):
             hero.die()
         screen.blit(bg,(0, 0))       
@@ -142,6 +149,7 @@ hero = Player(100,100)
 platforms = []
 entities.add(hero)
 animatedEntities = pygame.sprite.Group()
+monsters = pygame.sprite.Group()
 if __name__ == "__main__":
     main()
 

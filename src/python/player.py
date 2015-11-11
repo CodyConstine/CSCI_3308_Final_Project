@@ -6,6 +6,7 @@
 # DateCreated:2015/10/11/  
 #
 from pygame import *
+import monsters 
 import pyganim
 import blocks
 import os 
@@ -106,7 +107,7 @@ class Player(sprite.Sprite):
     def  collide (self, xvel, yvel, platforms): 
         for p in platforms:
              if sprite.collide_rect(self, p): 
-                if isinstance(p, blocks.BlockDie):
+                if isinstance(p, blocks.BlockDie) or isinstance(p, monsters.Monster):
                     self.die()
                 elif isinstance(p, blocks.Princess):
                     self.win = True

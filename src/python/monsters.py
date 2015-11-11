@@ -27,4 +27,22 @@ class Monster(sprite.Sprite):
             boltAnim.append((anim, 0.3))
         self.boltAnim = pyganim.PygAnimation(boltAnim)
         self.boltAnim.play()
+    def update(self, platforms):
+        self.image.fill(Color(gMonsterColor))
+        self.boltAnim.blit(self.image, (0,0))
+        self.rect.y += self.yvel
+        self.rect.x += self.xvel 
+        self.collide(platforms)
+
+        if(abs(self.startX - self.rect.x) > self.maxLengthLeft):
+            self.xvel = -self.xvel
+        if(abs(self.startY - self.rect.y) > self.maxLengthUp):
+            self.yvel = -self.yvel
+
+    def collide(self, platforms):
+        for p in platforms:
+            if sprite.collide_rect(self, p ) and self != p:
+                self.xvel = -self.xvel
+                self.yvel = -self.yvel
         
+
