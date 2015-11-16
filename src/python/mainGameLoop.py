@@ -5,9 +5,9 @@
 # File:mainGameLoop.py
 # DateCreated:2015/10/11/  
 #
-import MySQLdb
 import pygame
 import math
+import MySQLdb
 from pygame import *
 from player import *
 from blocks import *
@@ -34,6 +34,7 @@ def sendScores(playerID, score):
     x.execute(add_score, data_score)
     x.close()
     conn.close()
+
 class Camera(object):
     def __init__(self, camera_func, width, height):
         self.camera_func = camera_func
@@ -51,6 +52,8 @@ def camera_configure(camera, target_rect):
     t =  max (- (camera.height - gWindowsHeight), t) # Do not move on the bottom border
     t =  min (0, t)                            # Do not move on the upper border
     return Rect(l,t,w,h)
+user = raw_input('Enter a Username: ')
+score = 0
 def main(): 
     pygame.init ()
     screen = pygame.display.set_mode(gWindowsDisplay) 
@@ -134,6 +137,7 @@ def main():
         pygame.display.update ()
         message = frameCounter// 60
         frameCounter = frameCounter + 1;
+	score = message + hero.deathCounter
 level = ["                                   ",
         "----------------------------------",
         "-                       ----------",
@@ -143,7 +147,8 @@ level = ["                                   ",
         "-        -      -                -",
         "-               -                -",
         "-      ----  *  -               P-",
-        "----------- ----------------------"]  
+        "----------- ----------------------"]
+sendScores(user, score)  
 entities = pygame.sprite.Group()
 hero = Player(100,100)
 platforms = []
