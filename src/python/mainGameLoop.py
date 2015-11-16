@@ -25,13 +25,14 @@ gPlatformColor = "#FF6262"
 def sendScores(playerID, score):
     #This function was sending scores to a SQL server
     #Written by Cody updated on 11/9/15
-    conn = MySQLdb.connect(host= "45.55.26.125:3306", user="Game_User", passwd="",db="Game_Data")
+    conn = MySQLdb.connect(host= "45.55.26.125", port= 3306, user="Game_User", passwd="",db="Game_Data")
     x = conn.cursor()
-    add_score = ("INSERT INTO scores"
+    add_score = ("INSERT INTO Scores"
                 "(scores, userName)"
                 "VALUES (%s, %s)")
-    data_score(score,playerID)
+    data_score = (score,playerID)
     x.execute(add_score, data_score)
+    conn.commit()
     x.close()
     conn.close()
 
