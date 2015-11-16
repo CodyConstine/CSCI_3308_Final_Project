@@ -101,6 +101,7 @@ def main():
     while not hero.win:
         timerText = Font.render("Final project for CSCI3308.      Time:0"+ str(message)+"   Death:0"+str(hero.deathCounter
             ), 2,[200,50, 0])
+	score = message + hero.deathCounter
         boxSize = timerText.get_rect() 
         scoreXpos = (gWindowsWidth-boxSize[2])/2
         for e in pygame.event.get ():
@@ -138,7 +139,8 @@ def main():
         pygame.display.update ()
         message = frameCounter// 60
         frameCounter = frameCounter + 1;
-	score = message + hero.deathCounter
+    print(score)
+    sendScores(user, score)
 level = ["                                   ",
         "----------------------------------",
         "-                       ----------",
@@ -148,8 +150,7 @@ level = ["                                   ",
         "-        -      -                -",
         "-               -                -",
         "-      ----  *  -               P-",
-        "----------- ----------------------"]
-sendScores(user, score)  
+        "----------- ----------------------"]  
 entities = pygame.sprite.Group()
 hero = Player(100,100)
 platforms = []
