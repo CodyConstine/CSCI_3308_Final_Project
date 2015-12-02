@@ -5,12 +5,16 @@
 # File:mainGameLoop.py
 # DateCreated:2015/10/11/  
 #
+
+# imports
 import pygame
 import math
 from pygame import *
 from player import *
 from blocks import *
 from monsters import *
+
+
 # 
 gWindowsWidth = 800  
 gWindowsHeight = 320  
@@ -76,7 +80,7 @@ def main():
         pygame.font.init()
         Font = pygame.font.Font("font.ttf",32)
         frameCounter = 0
-        mn = Monster (190, 200, 2, 3, 150, 15)
+        mn = Monster (190, 200, 2, 3, 200, 15)
         entities.add(mn)
         platforms.append(mn)
         monsters.add(mn)
