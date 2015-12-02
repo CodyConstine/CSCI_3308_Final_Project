@@ -9,6 +9,7 @@
 # imports
 import pygame
 import math
+import MySQLdb
 from pygame import *
 from player import *
 from blocks import *
@@ -24,6 +25,20 @@ gPlatformWidth= 32
 gPlatformHeight = 32
 gPlatformDisplay = (gPlatformWidth,gPlatformHeight)
 gPlatformColor = "#FF6262"
+
+def sendScores(playerID, score):
+    #This function was sending scores to a SQL server
+    #Written by Cody updated on 11/9/15
+    conn = MySQLdb.connect(host= "45.55.26.125", port= 3306, user="Game_User", passwd="",db="Game_Data")
+    x = conn.cursor()
+    add_score = ("INSERT INTO Scores"
+                "(scores, userName)"
+                "VALUES (%s, %s)")
+    data_score = (score,playerID)
+    x.execute(add_score, data_score)
+    conn.commit()
+    x.close()
+    conn.close()
 
 class Camera(object):
     def __init__(self, camera_func, width, height):
@@ -42,6 +57,8 @@ def camera_configure(camera, target_rect):
     t =  max (- (camera.height - gWindowsHeight), t) # Do not move on the bottom border
     t =  min (0, t)                            # Do not move on the upper border
     return Rect(l,t,w,h)
+user = raw_input('Enter a Username: ')
+score = 0
 def main(): 
     pygame.init ()
     screen = pygame.display.set_mode(gWindowsDisplay) 
@@ -88,6 +105,7 @@ def main():
     while not hero.win:
         timerText = Font.render("Final project for CSCI3308.      Time:0"+ str(message)+"   Death:0"+str(hero.deathCounter
             ), 2,[200,50, 0])
+	score = message + hero.deathCounter
         boxSize = timerText.get_rect() 
         scoreXpos = (gWindowsWidth-boxSize[2])/2
         for e in pygame.event.get ():
@@ -125,6 +143,8 @@ def main():
         pygame.display.update ()
         message = frameCounter// 60
         frameCounter = frameCounter + 1;
+    print(score)
+    sendScores(user, score)
 level = ["                                   ",
         "----------------------------------",
         "-                       ----------",
