@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
      echo "<tr><th BGCOLOR='#A2A4A3'>Player Name</th><th BGCOLOR='#A2A4A3'>Score</th></tr>";
      // output data of each row
      while($row = $result->fetch_assoc()) {
-         echo "<tr><td BGCOLOR='#565A5C'><FONT COLOR='#FFFFFF'>" . $row["userName"]. "</td></FONT><td BGCOLOR='#565A5C'><FONT COLOR='#FFFFFF'>" . $row["scores"]. "</td></tr></FONT>";
+         echo "<tr><td BGCOLOR='#A2A4A3'>" . $row["userName"]. "</td><td BGCOLOR='#A2A4A3'>" . $row["scores"]. "</td></tr>";
      }
      echo "</table>";
 } else {
