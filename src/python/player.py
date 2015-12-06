@@ -11,7 +11,7 @@ import pyganim
 import blocks
 import os 
 gPlayer = 0
-gPlayerMoveSpeed = 7
+gPlayerMoveSpeed =5 
 gPlayerWidth = 22
 gPlayerHeight = 32
 gPlayerDisplay = (gPlayerWidth,gPlayerHeight)

@@ -17,8 +17,8 @@ from monsters import *
 
 
 # 
-gWindowsWidth = 800  
-gWindowsHeight = 320  
+gWindowsWidth = 800
+gWindowsHeight = 400  
 gWindowsDisplay = (gWindowsWidth,gWindowsHeight) 
 gWindowsBgColor = "#000000"
 gPlatformWidth= 32 
@@ -97,10 +97,10 @@ def main():
         pygame.font.init()
         Font = pygame.font.Font("font.ttf",32)
         frameCounter = 0
-        mn = Monster (190, 200, 2, 3, 200, 15)
-        entities.add(mn)
-        platforms.append(mn)
-        monsters.add(mn)
+       # mn = Monster (190, 150, 3, 3, 200, 15)
+       # entities.add(mn)
+       # platforms.append(mn)
+       # monsters.add(mn)
 
     while not hero.win:
         timerText = Font.render("Final project for CSCI3308.      Time:0"+ str(message)+"   Death:0"+str(hero.deathCounter
@@ -131,8 +131,8 @@ def main():
                 hero.teleporting(100,100)
         #
         #
-        monsters.update(platforms)
-        if(hero.rect.y>400):
+       # monsters.update(platforms)
+        if(hero.rect.y>600):
             hero.die()
         screen.blit(bg,(0, 0))       
         hero.update(left, right, up, platforms) 
@@ -145,16 +145,18 @@ def main():
         frameCounter = frameCounter + 1;
     print(score)
     sendScores(user, score)
-level = ["                                   ",
-        "----------------------------------",
-        "-                       ----------",
-        "-                                -",
-        "-            *                   -",
-        "-                                -",
-        "-        -      -                -",
-        "-               -                -",
-        "-      ----  *  -               P-",
-        "----------- ----------------------"]  
+level = ["                                                     ",
+        "------------------------------------------------------",
+        "-                                          *     *   -",
+        "-                                   *             P *-",
+        "-                                      -        - -  -",
+        "-                                   *   *-    *      -",
+        "-        *                           -      -        -",
+        "-                  -             -  *  -             -",
+        "-      -----       -         -   -        -          -",
+        "-                  -     *  *  * -                   -",
+        "-                  -             -                   -",
+        "-------------      ----------------------------------"] 
 entities = pygame.sprite.Group()
 hero = Player(100,100)
 platforms = []
