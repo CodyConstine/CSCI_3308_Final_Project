@@ -2,9 +2,12 @@
 <html>
 <head>
 <style>
+table {
+     border-collapse:collapse;
+}
 table, th, td {
      border: 2px solid black;
-     font-family:sans-serif;
+     font-family:arial;
      vertical-align:center;
      text-align:center;
      font-size:20pt;
