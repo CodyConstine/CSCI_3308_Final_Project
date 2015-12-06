@@ -2,6 +2,14 @@
 
 Final Project repo for 3308
 
+Auther: 
+
++ Cody Constine (https://github.com/Wofisdk)
++ Peilun Zhang (https://github.com/Pezhin)
++ Elias Ortiz (https://github.com/elor7824)
++ Jeremy.Dahms
+
+
 This is a project to make a game that sends scores to a MySQL server, and then sends the scores to a website to display a high score table.
 
 
