@@ -12,6 +12,9 @@ table, th, td {
      text-align:center;
      font-size:20pt;
 }
+body {
+     background-color:#565A5C;
+}
 </style>
 </head>
 <body>
