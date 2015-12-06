@@ -9,6 +9,7 @@ body {
 p{
     color:white;
     font-size:20pt;
+    
 }
 ul {
     list-style-type: none;
@@ -50,6 +51,7 @@ li a.active {
   <li><a href="leaderboard.php">Leaderboard</a></li>
   <li><a href="doc.php">Other</a></li>
 </ul>
-<p>Welcome to the home of the Big Bad Game!</p>
+<p>Welcome to the home of the Big Bad Game! A pygame made for CSCI 3308 at CU-Boulder.</p>
+<p>The tabs above navigate you around the website. Leaderboard takes you to the current leaderboard for the game itself, see where you rank among your friends!</p>
 </body>
 </html>
