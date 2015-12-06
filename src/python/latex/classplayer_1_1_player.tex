@@ -1,0 +1,194 @@
+\hypertarget{classplayer_1_1_player}{}\section{player.\+Player Class Reference}
+\label{classplayer_1_1_player}\index{player.\+Player@{player.\+Player}}
+
+
+\hyperlink{classplayer_1_1_player}{Player} class.  
+
+
+Inheritance diagram for player.\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classplayer_1_1_player}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classplayer_1_1_player_a52434c87f8baf931655ff9811c57f288}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, x, y)
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+def \hyperlink{classplayer_1_1_player_ad2ac60cf460239c12977eda3acc99d0c}{update} (self, left, right, up, platforms)
+\begin{DoxyCompactList}\small\item\em The method to update the location of the player. \end{DoxyCompactList}\item 
+def \hyperlink{classplayer_1_1_player_aaab39aa7f4e9fbb17207cd584641d7e0}{collide} (self, \hyperlink{classplayer_1_1_player_ae073642fcdedce9559f717e60945e51f}{xvel}, \hyperlink{classplayer_1_1_player_a91226d0b71959f0a35b280c6e2774e2d}{yvel}, platforms)
+\begin{DoxyCompactList}\small\item\em The method to detect whether there\textquotesingle{}s a collision. \end{DoxyCompactList}\item 
+def \hyperlink{classplayer_1_1_player_a6ad207dfcfeabddc8fb8e59dca09aa8e}{teleporting} (self, goX, goY)
+\begin{DoxyCompactList}\small\item\em The method to teleport the player. \end{DoxyCompactList}\item 
+def \hyperlink{classplayer_1_1_player_ac230f41f1580c1a884799af9fd199b34}{die} (self)
+\begin{DoxyCompactList}\small\item\em The method to kill the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classplayer_1_1_player_aba84dd227f561af4f4dda3880912bf1b}{win}\hypertarget{classplayer_1_1_player_aba84dd227f561af4f4dda3880912bf1b}{}\label{classplayer_1_1_player_aba84dd227f561af4f4dda3880912bf1b}
+
+\begin{DoxyCompactList}\small\item\em to keep track whether the game should end \end{DoxyCompactList}\item 
+\hyperlink{classplayer_1_1_player_ae073642fcdedce9559f717e60945e51f}{xvel}\hypertarget{classplayer_1_1_player_ae073642fcdedce9559f717e60945e51f}{}\label{classplayer_1_1_player_ae073642fcdedce9559f717e60945e51f}
+
+\begin{DoxyCompactList}\small\item\em velocity in x direction \end{DoxyCompactList}\item 
+\hyperlink{classplayer_1_1_player_a91226d0b71959f0a35b280c6e2774e2d}{yvel}\hypertarget{classplayer_1_1_player_a91226d0b71959f0a35b280c6e2774e2d}{}\label{classplayer_1_1_player_a91226d0b71959f0a35b280c6e2774e2d}
+
+\begin{DoxyCompactList}\small\item\em velocity in y direction \end{DoxyCompactList}\item 
+\hyperlink{classplayer_1_1_player_a3ad9f576ec329032c97a04f93ff53f88}{on\+Ground}\hypertarget{classplayer_1_1_player_a3ad9f576ec329032c97a04f93ff53f88}{}\label{classplayer_1_1_player_a3ad9f576ec329032c97a04f93ff53f88}
+
+\begin{DoxyCompactList}\small\item\em to see if the character isn\textquotesingle{}t jumping \end{DoxyCompactList}\item 
+\hyperlink{classplayer_1_1_player_a7727dfee393c4814eb2cb7090f2f3788}{startX}\hypertarget{classplayer_1_1_player_a7727dfee393c4814eb2cb7090f2f3788}{}\label{classplayer_1_1_player_a7727dfee393c4814eb2cb7090f2f3788}
+
+\begin{DoxyCompactList}\small\item\em the initial x location \end{DoxyCompactList}\item 
+\hyperlink{classplayer_1_1_player_a833a43f5890d48e945e62f7759c7c9f7}{startY}\hypertarget{classplayer_1_1_player_a833a43f5890d48e945e62f7759c7c9f7}{}\label{classplayer_1_1_player_a833a43f5890d48e945e62f7759c7c9f7}
+
+\begin{DoxyCompactList}\small\item\em the initial y location \end{DoxyCompactList}\item 
+\hyperlink{classplayer_1_1_player_a51ce2953ea3a60d34f3b21f916d4d122}{death\+Counter}\hypertarget{classplayer_1_1_player_a51ce2953ea3a60d34f3b21f916d4d122}{}\label{classplayer_1_1_player_a51ce2953ea3a60d34f3b21f916d4d122}
+
+\begin{DoxyCompactList}\small\item\em count the death \end{DoxyCompactList}\item 
+\hyperlink{classplayer_1_1_player_ac3a2325d576ac612ed8b00f0f61fe55b}{image}\hypertarget{classplayer_1_1_player_ac3a2325d576ac612ed8b00f0f61fe55b}{}\label{classplayer_1_1_player_ac3a2325d576ac612ed8b00f0f61fe55b}
+
+\begin{DoxyCompactList}\small\item\em pygame property, the player\textquotesingle{}s image \end{DoxyCompactList}\item 
+\hyperlink{classplayer_1_1_player_a6870facb96e50fe33af1071506c67c69}{rect}
+\begin{DoxyCompactList}\small\item\em pygame rectangle of the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classplayer_1_1_player}{Player} class. 
+
+This is the class for player, we define some variables to restrain the behaviors of our character. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{player\+::\+Player@{player\+::\+Player}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!player\+::\+Player@{player\+::\+Player}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, x, y)}{__init__(self, x, y)}}]{\setlength{\rightskip}{0pt plus 5cm}def player.\+Player.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{x, }
+\item[{}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classplayer_1_1_player_a52434c87f8baf931655ff9811c57f288}{}\label{classplayer_1_1_player_a52434c87f8baf931655ff9811c57f288}
+
+
+The constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & The object pointer. \\
+\hline
+{\em x} & The initial x location of the character \\
+\hline
+{\em y} & The initial y location of the character \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{player\+::\+Player@{player\+::\+Player}!collide@{collide}}
+\index{collide@{collide}!player\+::\+Player@{player\+::\+Player}}
+\subsubsection[{\texorpdfstring{collide(self, xvel, yvel, platforms)}{collide(self, xvel, yvel, platforms)}}]{\setlength{\rightskip}{0pt plus 5cm}def player.\+Player.\+collide (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{xvel, }
+\item[{}]{yvel, }
+\item[{}]{platforms}
+\end{DoxyParamCaption}
+)}\hypertarget{classplayer_1_1_player_aaab39aa7f4e9fbb17207cd584641d7e0}{}\label{classplayer_1_1_player_aaab39aa7f4e9fbb17207cd584641d7e0}
+
+
+The method to detect whether there\textquotesingle{}s a collision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & The object pointer. \\
+\hline
+{\em xvel} & The velocity in x direction. \\
+\hline
+{\em yvel} & The velocity in y direction. \\
+\hline
+{\em platforms} & the game platform \\
+\hline
+\end{DoxyParams}
+\index{player\+::\+Player@{player\+::\+Player}!die@{die}}
+\index{die@{die}!player\+::\+Player@{player\+::\+Player}}
+\subsubsection[{\texorpdfstring{die(self)}{die(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def player.\+Player.\+die (
+\begin{DoxyParamCaption}
+\item[{}]{self}
+\end{DoxyParamCaption}
+)}\hypertarget{classplayer_1_1_player_ac230f41f1580c1a884799af9fd199b34}{}\label{classplayer_1_1_player_ac230f41f1580c1a884799af9fd199b34}
+
+
+The method to kill the player. 
+
+XD 
+\begin{DoxyParams}{Parameters}
+{\em self} & The object pointer. \\
+\hline
+\end{DoxyParams}
+\index{player\+::\+Player@{player\+::\+Player}!teleporting@{teleporting}}
+\index{teleporting@{teleporting}!player\+::\+Player@{player\+::\+Player}}
+\subsubsection[{\texorpdfstring{teleporting(self, go\+X, go\+Y)}{teleporting(self, goX, goY)}}]{\setlength{\rightskip}{0pt plus 5cm}def player.\+Player.\+teleporting (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{goX, }
+\item[{}]{goY}
+\end{DoxyParamCaption}
+)}\hypertarget{classplayer_1_1_player_a6ad207dfcfeabddc8fb8e59dca09aa8e}{}\label{classplayer_1_1_player_a6ad207dfcfeabddc8fb8e59dca09aa8e}
+
+
+The method to teleport the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & The object pointer. \\
+\hline
+{\em goX} & the x location of the destination. \\
+\hline
+{\em goY} & the Y location of the destination. \\
+\hline
+\end{DoxyParams}
+\index{player\+::\+Player@{player\+::\+Player}!update@{update}}
+\index{update@{update}!player\+::\+Player@{player\+::\+Player}}
+\subsubsection[{\texorpdfstring{update(self, left, right, up, platforms)}{update(self, left, right, up, platforms)}}]{\setlength{\rightskip}{0pt plus 5cm}def player.\+Player.\+update (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{left, }
+\item[{}]{right, }
+\item[{}]{up, }
+\item[{}]{platforms}
+\end{DoxyParamCaption}
+)}\hypertarget{classplayer_1_1_player_ad2ac60cf460239c12977eda3acc99d0c}{}\label{classplayer_1_1_player_ad2ac60cf460239c12977eda3acc99d0c}
+
+
+The method to update the location of the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & The object pointer. \\
+\hline
+{\em left} & whether the player is moving left \\
+\hline
+{\em right} & whether the player is moving right \\
+\hline
+{\em up} & whether the player is moving up \\
+\hline
+{\em platforms} & the game platform \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{player\+::\+Player@{player\+::\+Player}!rect@{rect}}
+\index{rect@{rect}!player\+::\+Player@{player\+::\+Player}}
+\subsubsection[{\texorpdfstring{rect}{rect}}]{\setlength{\rightskip}{0pt plus 5cm}player.\+Player.\+rect}\hypertarget{classplayer_1_1_player_a6870facb96e50fe33af1071506c67c69}{}\label{classplayer_1_1_player_a6870facb96e50fe33af1071506c67c69}
+
+
+pygame rectangle of the player. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+player.\+py\end{DoxyCompactItemize}

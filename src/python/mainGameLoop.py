@@ -16,9 +16,10 @@ from blocks import *
 from monsters import *
 
 
-# 
-gWindowsWidth = 800  
-gWindowsHeight = 320  
+## @package main 
+# this is the main file for our game
+gWindowsWidth = 800
+gWindowsHeight = 400  
 gWindowsDisplay = (gWindowsWidth,gWindowsHeight) 
 gWindowsBgColor = "#000000"
 gPlatformWidth= 32 
@@ -26,6 +27,7 @@ gPlatformHeight = 32
 gPlatformDisplay = (gPlatformWidth,gPlatformHeight)
 gPlatformColor = "#FF6262"
 
+## the method to send the score to our MySQL server
 def sendScores(playerID, score):
     #This function was sending scores to a SQL server
     #Written by Cody updated on 11/9/15
@@ -40,7 +42,13 @@ def sendScores(playerID, score):
     x.close()
     conn.close()
 
+## Class for the camera
 class Camera(object):
+    #constructor
+    #@param self the object pointer
+    #@param camera_func the function we pass to keep track of the camera location
+    #@param width width of the camera
+    #@param height height of the camera
     def __init__(self, camera_func, width, height):
         self.camera_func = camera_func
         self.state = Rect(0,0, width, height)
@@ -48,6 +56,7 @@ class Camera(object):
         return target.rect.move(self.state.topleft)
     def update(self, target):
         self.state = self.camera_func(self.state, target.rect) 
+## the method to keep the Camera focusing on our player
 def camera_configure(camera, target_rect):
     l, t, _, _ = target_rect
     _, _, w, h = camera
@@ -97,10 +106,10 @@ def main():
         pygame.font.init()
         Font = pygame.font.Font("font.ttf",32)
         frameCounter = 0
-        mn = Monster (190, 200, 2, 3, 200, 15)
-        entities.add(mn)
-        platforms.append(mn)
-        monsters.add(mn)
+       # mn = Monster (190, 150, 3, 3, 200, 15)
+       # entities.add(mn)
+       # platforms.append(mn)
+       # monsters.add(mn)
 
     while not hero.win:
         timerText = Font.render("Final project for CSCI3308.      Time:0"+ str(message)+"   Death:0"+str(hero.deathCounter
@@ -131,8 +140,8 @@ def main():
                 hero.teleporting(100,100)
         #
         #
-        monsters.update(platforms)
-        if(hero.rect.y>400):
+       # monsters.update(platforms)
+        if(hero.rect.y>600):
             hero.die()
         screen.blit(bg,(0, 0))       
         hero.update(left, right, up, platforms) 
@@ -145,16 +154,18 @@ def main():
         frameCounter = frameCounter + 1;
     print(score)
     sendScores(user, score)
-level = ["                                   ",
-        "----------------------------------",
-        "-                       ----------",
-        "-                                -",
-        "-            *                   -",
-        "-                                -",
-        "-        -      -                -",
-        "-               -                -",
-        "-      ----  *  -               P-",
-        "----------- ----------------------"]  
+level = ["                                                     ",
+        "------------------------------------------------------",
+        "-                                          *     *   -",
+        "-                                   *             P *-",
+        "-                                      -        - -  -",
+        "-                                   *   *-    *      -",
+        "-        *                           -      -        -",
+        "-                  -             -  *  -             -",
+        "-      -----       -         -   -        -          -",
+        "-                  -     *  *  * -                   -",
+        "-                  -             -                   -",
+        "-------------      ----------------------------------"] 
 entities = pygame.sprite.Group()
 hero = Player(100,100)
 platforms = []
