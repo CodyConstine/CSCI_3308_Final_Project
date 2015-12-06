@@ -5,6 +5,10 @@
 # File:player.py
 # DateCreated:2015/10/11/  
 #
+
+## @package player
+#  Defined the behaviors of the player
+
 from pygame import *
 import monsters 
 import pyganim
@@ -36,18 +40,35 @@ ANIMATION_JUMP_RIGHT = [('%s/mario/jr.png'% ICON_DIR, 0.1)]
 ANIMATION_JUMP = [('%s/mario/j.png'% ICON_DIR, 0.1)] 
 ANIMATION_STAY = [('%s/mario/0.png'% ICON_DIR, 0.1)] 
 
+## Player class 
+#
+#  This is the class for player, we define some variables to restrain the behaviors of our character.
 class Player(sprite.Sprite):
+
+    ## The constructor
+    #  @param self The object pointer.
+    #  @param x The initial x location of the character
+    #  @param y The initial y location of the character
     def __init__(self,x,y):
         sprite.Sprite.__init__(self)
-        self.win = False 
+        ## to keep track whether the game should end
+        self.win = False
+        ## velocity in x direction
         self.xvel = 0
+        ## velocity in y direction
         self.yvel = 0
+        ## to see if the character isn't jumping
         self.onGround = False
+        ## the initial x location
         self.startX = x
+        ## the initial y location
         self.startY = y
+        ## count the death
         self.deathCounter = 0
+        ## pygame property, the player's image
         self.image = Surface((gPlayerDisplay))
         self.image.fill(Color(gPlayerColor))
+        ## pygame rectangle of the player.
         self.rect = Rect(x, y, gPlayerWidth, gPlayerHeight)
         self.image.set_colorkey(Color(gPlayerColor))
         boltAnim = []
@@ -72,6 +93,13 @@ class Player(sprite.Sprite):
         
         self.boltAnimJump = pyganim.PygAnimation (ANIMATION_JUMP)
         self.boltAnimJump.play ()
+
+    ## The method to update the location of the player
+    #  @param self The object pointer.
+    #  @param left whether the player is moving left
+    #  @param right whether the player is moving right 
+    #  @param up whether the player is moving up
+    #  @param platforms the game platform
     def update(self, left, right, up, platforms):
         if up:
             if self.onGround:
@@ -104,6 +132,11 @@ class Player(sprite.Sprite):
         self.collide(0, self.yvel,platforms)
         self.rect.x = self.xvel + self.rect.x
         self.collide(self.xvel,0,platforms)
+    ## The method to detect whether there's a collision
+    #  @param self The object pointer.
+    #  @param xvel The velocity in x direction.
+    #  @param yvel The velocity in y direction.
+    #  @param platforms the game platform
     def  collide (self, xvel, yvel, platforms): 
         for p in platforms:
              if sprite.collide_rect(self, p): 
@@ -125,11 +158,16 @@ class Player(sprite.Sprite):
 
                     if yvel <0:                      
                         self.rect.top = p.rect.bottom
-                        self.yvel = 0 
+                        self.yvel = 0
+    ## The method to teleport the player
+    #  @param self The object pointer.
+    #  @param goX the x location of the destination.
+    #  @param goY the Y location of the destination.
     def teleporting(self, goX, goY):
         self.rect.x = goX
         self.rect.y = goY
-        
+    ## The method to kill the player. XD
+    #  @param self The object pointer.   
     def die(self):
         time.wait(500)
         self.deathCounter = self.deathCounter + 1

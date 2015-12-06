@@ -16,7 +16,8 @@ from blocks import *
 from monsters import *
 
 
-# 
+## @package main 
+# this is the main file for our game
 gWindowsWidth = 800
 gWindowsHeight = 400  
 gWindowsDisplay = (gWindowsWidth,gWindowsHeight) 
