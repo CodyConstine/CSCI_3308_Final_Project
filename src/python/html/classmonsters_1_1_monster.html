@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>monsters</b></li><li class="navelem"><a class="el" href="classmonsters_1_1_monster.html">Monster</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacemonsters.html">monsters</a></li><li class="navelem"><a class="el" href="classmonsters_1_1_monster.html">Monster</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -94,6 +94,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">monsters.Monster Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>monster class using pygame.sprite  
+ <a href="classmonsters_1_1_monster.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for monsters.Monster:</div>
 <div class="dyncontent">
@@ -105,10 +108,163 @@ Inheritance diagram for monsters.Monster:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a1f5316617407345315db4e68c06bb47e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonsters_1_1_monster.html#a1f5316617407345315db4e68c06bb47e">__init__</a> (self, x, y, left, up, maxLeft, maxUp)</td></tr>
+<tr class="memdesc:a1f5316617407345315db4e68c06bb47e"><td class="mdescLeft">&#160;</td><td class="mdescRight">the constructor  <a href="#a1f5316617407345315db4e68c06bb47e">More...</a><br /></td></tr>
+<tr class="separator:a1f5316617407345315db4e68c06bb47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d656430724416cc27c6d7de71bb41c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonsters_1_1_monster.html#ac7d656430724416cc27c6d7de71bb41c">update</a> (self, platforms)</td></tr>
+<tr class="memdesc:ac7d656430724416cc27c6d7de71bb41c"><td class="mdescLeft">&#160;</td><td class="mdescRight">the method to update the player  <a href="#ac7d656430724416cc27c6d7de71bb41c">More...</a><br /></td></tr>
+<tr class="separator:ac7d656430724416cc27c6d7de71bb41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af428d784cccb907c0dab2537e68b3b3c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmonsters_1_1_monster.html#af428d784cccb907c0dab2537e68b3b3c">collide</a> (self, platforms)</td></tr>
+<tr class="memdesc:af428d784cccb907c0dab2537e68b3b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The method to detect the collision.  <a href="#af428d784cccb907c0dab2537e68b3b3c">More...</a><br /></td></tr>
+<tr class="separator:af428d784cccb907c0dab2537e68b3b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>monster class using pygame.sprite </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a1f5316617407345315db4e68c06bb47e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def monsters.Monster.__init__ </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>left</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>up</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maxLeft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>maxUp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>the object pointer </td></tr>
+    <tr><td class="paramname">x</td><td>the x location of the monster </td></tr>
+    <tr><td class="paramname">y</td><td>the y location of the monster </td></tr>
+    <tr><td class="paramname">left</td><td>the max horizontal velocity </td></tr>
+    <tr><td class="paramname">up</td><td>the max vertical velocity </td></tr>
+    <tr><td class="paramname">maxLeft</td><td>the left most position </td></tr>
+    <tr><td class="paramname">maxUp</td><td>the up most position </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="af428d784cccb907c0dab2537e68b3b3c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def monsters.Monster.collide </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>platforms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The method to detect the collision. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>the object pointer </td></tr>
+    <tr><td class="paramname">the</td><td>platforms object we are running games on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ac7d656430724416cc27c6d7de71bb41c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def monsters.Monster.update </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>platforms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>the method to update the player </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>the object pointer </td></tr>
+    <tr><td class="paramname">the</td><td>platforms object we are running games on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>monsters.py</li>
 </ul>

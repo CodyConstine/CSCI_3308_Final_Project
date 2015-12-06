@@ -1,5 +1,10 @@
 \hypertarget{classmonsters_1_1_monster}{}\section{monsters.\+Monster Class Reference}
 \label{classmonsters_1_1_monster}\index{monsters.\+Monster@{monsters.\+Monster}}
+
+
+monster class using pygame.\+sprite  
+
+
 Inheritance diagram for monsters.\+Monster\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -8,10 +13,97 @@ Inheritance diagram for monsters.\+Monster\+:\begin{figure}[H]
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
-\end{DoxyCompactItemize}
+\item 
+def \hyperlink{classmonsters_1_1_monster_a1f5316617407345315db4e68c06bb47e}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, x, y, left, up, max\+Left, max\+Up)
+\begin{DoxyCompactList}\small\item\em the constructor \end{DoxyCompactList}\item 
+def \hyperlink{classmonsters_1_1_monster_ac7d656430724416cc27c6d7de71bb41c}{update} (self, platforms)
+\begin{DoxyCompactList}\small\item\em the method to update the player \end{DoxyCompactList}\item 
+def \hyperlink{classmonsters_1_1_monster_af428d784cccb907c0dab2537e68b3b3c}{collide} (self, platforms)
+\begin{DoxyCompactList}\small\item\em The method to detect the collision. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+monster class using pygame.\+sprite 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{monsters\+::\+Monster@{monsters\+::\+Monster}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!monsters\+::\+Monster@{monsters\+::\+Monster}}
+\subsubsection[{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+(self, x, y, left, up, max\+Left, max\+Up)}{__init__(self, x, y, left, up, maxLeft, maxUp)}}]{\setlength{\rightskip}{0pt plus 5cm}def monsters.\+Monster.\+\_\+\+\_\+init\+\_\+\+\_\+ (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{left, }
+\item[{}]{up, }
+\item[{}]{max\+Left, }
+\item[{}]{max\+Up}
+\end{DoxyParamCaption}
+)}\hypertarget{classmonsters_1_1_monster_a1f5316617407345315db4e68c06bb47e}{}\label{classmonsters_1_1_monster_a1f5316617407345315db4e68c06bb47e}
+
+
+the constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & the object pointer \\
+\hline
+{\em x} & the x location of the monster \\
+\hline
+{\em y} & the y location of the monster \\
+\hline
+{\em left} & the max horizontal velocity \\
+\hline
+{\em up} & the max vertical velocity \\
+\hline
+{\em max\+Left} & the left most position \\
+\hline
+{\em max\+Up} & the up most position \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{monsters\+::\+Monster@{monsters\+::\+Monster}!collide@{collide}}
+\index{collide@{collide}!monsters\+::\+Monster@{monsters\+::\+Monster}}
+\subsubsection[{\texorpdfstring{collide(self, platforms)}{collide(self, platforms)}}]{\setlength{\rightskip}{0pt plus 5cm}def monsters.\+Monster.\+collide (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{platforms}
+\end{DoxyParamCaption}
+)}\hypertarget{classmonsters_1_1_monster_af428d784cccb907c0dab2537e68b3b3c}{}\label{classmonsters_1_1_monster_af428d784cccb907c0dab2537e68b3b3c}
+
+
+The method to detect the collision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & the object pointer \\
+\hline
+{\em the} & platforms object we are running games on \\
+\hline
+\end{DoxyParams}
+\index{monsters\+::\+Monster@{monsters\+::\+Monster}!update@{update}}
+\index{update@{update}!monsters\+::\+Monster@{monsters\+::\+Monster}}
+\subsubsection[{\texorpdfstring{update(self, platforms)}{update(self, platforms)}}]{\setlength{\rightskip}{0pt plus 5cm}def monsters.\+Monster.\+update (
+\begin{DoxyParamCaption}
+\item[{}]{self, }
+\item[{}]{platforms}
+\end{DoxyParamCaption}
+)}\hypertarget{classmonsters_1_1_monster_ac7d656430724416cc27c6d7de71bb41c}{}\label{classmonsters_1_1_monster_ac7d656430724416cc27c6d7de71bb41c}
+
+
+the method to update the player 
+
+
+\begin{DoxyParams}{Parameters}
+{\em self} & the object pointer \\
+\hline
+{\em the} & platforms object we are running games on \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

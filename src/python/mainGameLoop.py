@@ -27,6 +27,7 @@ gPlatformHeight = 32
 gPlatformDisplay = (gPlatformWidth,gPlatformHeight)
 gPlatformColor = "#FF6262"
 
+## the method to send the score to our MySQL server
 def sendScores(playerID, score):
     #This function was sending scores to a SQL server
     #Written by Cody updated on 11/9/15
@@ -41,7 +42,13 @@ def sendScores(playerID, score):
     x.close()
     conn.close()
 
+## Class for the camera
 class Camera(object):
+    #constructor
+    #@param self the object pointer
+    #@param camera_func the function we pass to keep track of the camera location
+    #@param width width of the camera
+    #@param height height of the camera
     def __init__(self, camera_func, width, height):
         self.camera_func = camera_func
         self.state = Rect(0,0, width, height)
@@ -49,6 +56,7 @@ class Camera(object):
         return target.rect.move(self.state.topleft)
     def update(self, target):
         self.state = self.camera_func(self.state, target.rect) 
+## the method to keep the Camera focusing on our player
 def camera_configure(camera, target_rect):
     l, t, _, _ = target_rect
     _, _, w, h = camera
