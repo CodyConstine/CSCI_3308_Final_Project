@@ -30,3 +30,9 @@ Usage:
 4. Enter a username
 5. Play the game!
 6. Load leaderboard.php to see the high score board.
+
+
+Docs:
+
+1. The Docs can be found in the HTML folder in src/python
+2. They can be accessed from the home.php site.
