@@ -1,0 +1,40 @@
+/**
+
+@mainpage CSCI 3308 Final Project
+
+
+
+Auther:
+
+Cody Constine (https://github.com/Wofisdk)
+
+Peilun Zhang (https://github.com/Pezhin)
+
+Elias Ortiz (https://github.com/elor7824)
+
+Jeremy.Dahms
+
+This is a project to make a game that sends scores to a MySQL server, and then sends the scores to a website to display a high score table.
+
+Requirements
+
+Python 2.7
+
+Pygame (http://pygame.org/hifi.html)
+
+Internet Connection for Running Game.
+
+Usage:
+
+Download the repo and all the included files
+
+Navigate to the scr/python folder.
+
+run maingameloop.py using python maingameloop.py
+
+Enter a username
+
+Play the game!
+
+Load leaderboard.php to see the high score board.
+*/
