@@ -12,3 +12,5 @@ Usage:
 4. Enter a username
 5. Play the game!
 6. Load leaderboard.php to see the high score board.
+
+To run the website you have to download the three .php files into a directory. Open a terminal window and navigate to the directory of the .php files. run "php -S localhost:8000" then on a web browser go to http://localhost:8000/home.php
