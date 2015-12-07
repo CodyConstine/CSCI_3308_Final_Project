@@ -25,18 +25,20 @@ Usage:
 
 
 1. Download the repo and all the included files
-2. Navigate to the scr/python folder.
+2. Navigate to the src/python folder.
 3. run maingameloop.py using python maingameloop.py
 4. Enter a username
 5. Play the game!
-6. Load leaderboard.php to see the high score board.
+6. To see the leaderboard open a web browser and go to 45.55.26.125:8000 and click leaderboard.
 
-<<<<<<< HEAD
-To run the website you have to download the three .php files into a directory. Open a terminal window and navigate to the directory of the .php files. run "php -S localhost:8000" then on a web browser go to http://localhost:8000/home.php
-=======
+
+Repo organization:
+
+1. Python/Game files are stored in src/python folder
+2. Internet files are stored in the main folder
+3. game screenshots can be found in the screenshots folder.
 
 Docs:
 
 1. The Docs can be found in the HTML folder in src/python
-2. They can be accessed from the home.php site.
->>>>>>> 473aab442b03cdb39bde163d8d099ca2cd9383ba
+2. They can be accessed from the site at 45.55.26.125:8000 and click docs.
