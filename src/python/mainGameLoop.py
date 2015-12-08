@@ -100,7 +100,6 @@ def main():
         x = 0
 
         
-        timer.tick(60)
         #timer
         message = 0
         pygame.font.init()
@@ -143,7 +142,8 @@ def main():
        # monsters.update(platforms)
         if(hero.rect.y>600):
             hero.die()
-        screen.blit(bg,(0, 0))       
+        screen.blit(bg,(0, 0))
+	timer.tick(60)    #slows down mario   
         hero.update(left, right, up, platforms) 
         for e in entities:
             screen.blit (e.image, camera.apply (e))
