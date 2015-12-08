@@ -9,7 +9,7 @@
 # imports
 import pygame
 import math
-#import MySQLdb
+import MySQLdb
 from pygame import *
 from player import *
 from blocks import *
